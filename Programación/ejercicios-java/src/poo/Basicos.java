@@ -8,9 +8,8 @@ public class Basicos {
     //Declaracion de una 'clase'
     static class Bicicleta {
         //Declaracion de atributos 'atributos'
-
         /*Los atributos 'ruedas, asientos, manillar' ya tienen un valor definido que sera el mismo para todos los objetos instanciados
-        de la clase 'Bicicleta'. Este valor ya establecido recibe el nombre de 'estado'.*/
+        de la clase 'Bicicleta'. Este valor establecido a los atributos recibe el nombre de 'estado'.*/
         int ruedas = 2;
         int asientos = 1;
         int manillar = 1;
@@ -22,8 +21,15 @@ public class Basicos {
 
         /*Declaración de métodos. Cada método recibirá un parámetro que será el valor que modificara los atributos
         iniciales de la clase. Cada parámetro pasado a un método será el nuevo valor del atributo de la clase
-        asignado al valor pasado a ese parámetro.*/
+        asignado al valor pasado a ese parámetro. Los metodos son el comportamiento de una clase de objetos, aquellas
+        acciones que puede realizarla un objeto.
+
+        Los metodos se utilizan para alterar el estado de los atributos de los objetos. Dentro del metodo se llama al
+        atributo a alterar y este obtenda el valor del parametro que le pasemos al metodo. Este es un metodo set,
+        le 'set=asignar' y su funcion es pasarle el estado por parametro al atributo del objeto.*/
         void setVelocidades(int newVelocidadMaxima, int newVelocidadActual) {
+            /*velocidadMaxima y velocidadActual son atributos definidos en la clase. Los objetos podran llamar a este metodo
+            para establecerle un estado a estos atributos.*/
             velocidadMaxima = newVelocidadMaxima;
             velocidadActual = newVelocidadActual;
             if(velocidadActual > velocidadMaxima) infoVelocidad = false;
@@ -34,6 +40,8 @@ public class Basicos {
         void setMarca(String newMarca) {
             marca = newMarca;
         }
+
+
         void getBicicletaInfo() {
             if(infoVelocidad) {
                 System.out.println("Informacion bicicleta: "+ruedas+" ruedas; "+asientos+" asientos; "+manillar+" manillar; "+velocidadMaxima+" velocidad maxima; "+velocidadActual+" velocidad actual; "+color+" color; "+marca+" marca; ");
