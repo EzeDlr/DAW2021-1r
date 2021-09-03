@@ -34,6 +34,9 @@ public class Pruebas {
 
     public static void main(String[] args) {
 
+        /*Esta es la forma correcta de leer una entrada por teclado
+        y asignar ese valor al atributo del objeto mediante el metodo set.*/
+
         String nombre;
         int cantidad;
 
