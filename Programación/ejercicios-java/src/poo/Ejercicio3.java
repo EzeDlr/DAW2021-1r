@@ -225,13 +225,13 @@ public class Ejercicio3 {
         System.out.println("Saldo: " + cuenta2.getSaldo());
         System.out.println();
 
-        //mostrar el saldo de cuenta3
+        //mostrar el saldo de cuenta3.
         System.out.println("Saldo de la cuenta 3");
         System.out.println("Saldo: " + cuenta3.getSaldo());
         System.out.println();
 
     }
-.
+
 
 
     }
