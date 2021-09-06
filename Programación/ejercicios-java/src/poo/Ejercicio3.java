@@ -49,6 +49,9 @@ public class Ejercicio3 {
 
         /*Constructor que recibe parametros, los valores pasados por parametros se declararan en la creación de
         * instancia de un nuevo objeto.*/
+        
+        /*Como el nombre de los parametros es diferente al de
+         * los atributos, no hace falta diferenciarlos con this.*/
         public Cuenta(String a, String b, double c, double d) {
             nombreCliente = a;
             numeroCuenta = b;
