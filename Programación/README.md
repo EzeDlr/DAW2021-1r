@@ -24,7 +24,13 @@
 - [Programación orientada a objetos](#programación-orientada-a-objetos)
   - [Encapsulación modificadores de acceso](#encapsulacion-modificadores-de-acceso)
   - [Clases](#clases)
-  	- [Atributos y métodos](#atributos-y-métodos)  
+  	- [Atributos y métodos](#atributos-y-métodos)
+  	- [Método constructor](#metodo-constructor)
+  	- [Paso de valores a los constructores](#paso-de-valores-a-los-constructores)
+  	- [Método setter y getter](#metodo-setter-y-getter)
+  	- [Keyword 'this'](#keyword-'this')
+  	- [Sobreescribir un método](#sobreescribir-un-metodo)
+  	- [Subclases](#subclases)
 
 ## ¿Qué es programar?
 
