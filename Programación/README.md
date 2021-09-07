@@ -21,6 +21,10 @@
   - [Ordenar elementos de una colección](#ordenar-elementos-de-una-colección)
   - [Interfaz Set](#interfaz-set)
   - [Interfaz list](#interfaz-list)
+- [Programación orientada a objetos](#programación-orientada-a-objetos)
+  - [Encapsulación modificadores de acceso](#encapsulacion-modificadores-de-acceso)
+  - [Clases](#clases)
+  	[Atributos y métodos](#atributos-y-métodos)  
 
 ## ¿Qué es programar?
 
