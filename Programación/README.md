@@ -763,3 +763,285 @@ Map <String, Integer> desordenado = new HashMap<String, Integer>();
             System.out.println(key);
         }
 ```
+# Programación orientada a objetos
+
+La programación orientada a objetos es un paradigma de programación o estilo de programación donde se construyen elementos ***(objetos)*** del problema a resolver, estos objetos tienen caracteristicas ***(atributos)*** y funciones ***(métodos).***
+
+Este paradigma permite *separar los diferentes componentes del programa* y así facilitar su creación y mejorías futuras.
+
+> *En este paradigma se debe de tener siempre en mente que se intenta representar el mundo real en código diferenciando las clases como un conjunto de objetos genéricos y los objetos como tipos de objetos de esta clase mas específicos.*
+
+## Encapsulación, modificadores de acceso
+
+El acceso a las propiedades y métodos entre clases se determina mediante las palabras reservadas de los ***modificadores de acceso.***
+
+- ***private*** la propiedad o método unicamente es accesible desde la propia clase.
+- ***package private*** es el valor por defecto que se le asigna a una propiedad o método, establece que estas puedan ser accesibles desde cualquier clase que este dentro del mismo ***package***.
+- ***protected*** es accesible desde la misma clase, una clase en el mismo paquete o una clase instanciada desde otro ***package***.
+- ***public*** es accesible tanto en las clases de fuera como de dentro del ***package***.
+
+![Untitled](Programacio%CC%81n%20697a1b389ca54460b4a7f461431f6f4a/Untitled.png)
+
+> *Es muy importante la distinción entre los **packages**.*
+
+```java
+public class Clase {
+	private String nombre;
+	
+	public void metodo() {
+		
+}	
+}
+
+public class Clase2 {
+	Clase objeto = new Clase();
+	objeto.nombre; //dara error pues el atributo 'nombre' de la clase 'Clase' es
+	privado.
+
+	objeto.metodo(); //se ejecutara puesto que el metodo es publico.
+}
+```
+
+## Clases
+
+En POO una clase es un plano del cual se formaran los objetos individuales instanciados de esta clase.
+
+```java
+//Declaracion de una clase con la keyword *'Class'*
+class Clase {
+	//atributos
+	//metodos
+} 
+```
+
+### Atributos y métodos
+
+Dentro de una clase existen los ***atributos*** y los ***metodos.*** Los *atributos* se le hacen llamar *'estado del objeto'* y son simples variables que representan el *estado* del objeto. Por otro lado los ***metodos*** son *funciones* que sirven para interactuar y cambiar el estado de los *atributos.*
+
+```java
+//Declaracion de atributos 'atributos'
+ /*Los atributos 'ruedas, asientos, manillar' ya tienen un valor definido que sera 
+el mismo para todos los objetos instanciado de la clase 'Bicicleta'. 
+Este valor establecido a los atributos recibe el nombre de 'estado'.*/
+        int ruedas = 2;
+        int asientos = 1;
+        int manillar = 1;
+        int velocidadMaxima;
+        int velocidadActual;
+        String color;
+        String marca;
+        boolean infoVelocidad = true;
+```
+
+Cada método recibirá un parámetro que será el valor que modificara los atributos iniciales de la clase. Cada parámetro pasado a un método será el nuevo valor del atributo de la clase asignado al valor pasado a ese parámetro. Los métodos son el comportamiento de una clase de objetos, aquellas acciones que puede realizarla un objeto.
+
+Los métodos se utilizan para alterar el estado de los atributos de los objetos. Dentro del método se llama al atributo a alterar y este obtendra el valor del parámetro que le pasemos al método.
+
+```java
+//Este es un metodo set, le 'set=asignar' y su funcion es pasarle el estado por 
+//parametro al atributo del objeto.
+void setVelocidades(int newVelocidadMaxima, int newVelocidadActual) {
+            /*velocidadMaxima y velocidadActual son atributos definidos en la clase. Los objetos podran llamar a este metodo
+            para establecerle un estado a estos atributos.*/
+            velocidadMaxima = newVelocidadMaxima;
+            velocidadActual = newVelocidadActual;
+            if(velocidadActual > velocidadMaxima) infoVelocidad = false;
+        }
+        void setColor(String newColor) {
+            color = newColor;
+        }
+        void setMarca(String newMarca) {
+            marca = newMarca;
+        }
+```
+
+### Método constructor
+
+Esto es un constructor. Un constructor es un método especial de las clases que se llama automáticamente cada vez que se instancia un objeto de la clase. Siempre que se inicializa un objeto de una clase el constructor es el método que le asignara los valores iniciales  a los atributos de la clase.
+
+```java
+static public class Cuenta {
+
+        private String nombreCliente;
+        private String numeroCuenta;
+        private double interes;
+        private double saldo;
+
+        /*Constructores*/
+
+            /*
+             * Puedes utilizar su creación para definir de que forma le puedes pasar
+								 valores a los atributos
+             * de un objeto. Por teclado(scanner), por parametros...*/
+
+            /*Constructor por defecto, sin parametros, los valores de los atributos 
+								que estan vacios
+            * Los valores se pasaran a este constructor mediante un Scanner*/
+        public Cuenta() {
+            /*
+             * Al crear un objeto sin pasarle parametros estas llamando a este 
+								constructor(metodo) por defecto
+             * que se inicializa al instanciar un objeto de la clase. 
+								El constructor esta vacio, le pasas
+             * los valores mediante los metodos set del la propia clase, y 
+								el valor del parametro de esos
+             * métodos se los pasas por teclado(Scanner).*/
+        }
+
+        /*Constructor que recibe parametros, los valores pasados por parametros se 
+						declararan en la creación de instancia de un nuevo objeto.*/
+        
+        /*Como el nombre de los parametros es diferente al de
+         * los atributos, no hace falta diferenciarlos con this.*/
+        public Cuenta(String a, String b, double c, double d) {
+            nombreCliente = a;
+            numeroCuenta = b;
+            interes = c;
+            saldo = d;
+        }
+            //Constructor copia utilizado para hacer copias entre los objetos.
+        public Cuenta(final Cuenta x) {
+            nombreCliente = x.nombreCliente;
+            numeroCuenta = x.numeroCuenta;
+            interes = x.interes;
+            saldo = x.saldo;
+        }
+```
+
+### Paso de valores a los constructores
+
+En el anterior apartado se definieron tres constructores; ***constructor por defecto vacío, constructor con parámetros y un constructor copia.*** A los dos primeros constructores la forma de pasarle valores es diferente.
+
+Al constructor que esta vacío se le deberán de pasar los valores por el teclado, recogiendo un input del usuario mediante *Scanner.* Con ese valor obtenido mediante input podemos utilizar los métodos **set (explicado abajo)** para asignarle estos valores.
+
+```java
+//Constructor por defecto, vacio
+
+Scanner sc = new Scanner(System.in);
+        String nombre; 
+        String numero;
+        double tipo; 
+        double importe;
+
+        //se crea objeto cuenta1 sin parámetros
+        //se ejecuta el constructor por defecto
+        Cuenta cuenta1 = new Cuenta();
+
+        System.out.print("Nombre : ");
+        nombre = sc.nextLine();
+        System.out.print("Número de cuenta : ");
+        numero = sc.nextLine();
+        System.out.print("Tipo de interes : ");
+        tipo = sc.nextDouble();
+        System.out.print("Saldo: ");
+        importe = sc.nextDouble();
+
+        cuenta1.setNombreCliente(nombre);
+        cuenta1.setNumeroCuenta(numero);
+        cuenta1.setInteres(tipo);
+        cuenta1.setSaldo(importe);
+```
+
+El siguiente constructor que tenemos esta realizado con parámetros, unicamente le pasamos valores a estos parámetros cuando instanciemos un nuevo objeto.
+
+```java
+//Constructor con valores pasados por parametro
+Cuenta cuenta2 = new Cuenta("Juan Ferrández Rubio", "12345678901234567890", 1.75, 300);
+```
+
+### Métodos setter y getter
+
+Normalmente los atributos de una clase suelen ser privados por lo que para cambiar su estado se hace uso de los métodos ***set y get.*** Es decir, al proteger variables dentro de una clase que unicamente podrán ser invocadas y manipuladas dentro de la clase y para se hace uso de estos métodos.
+
+***setter*** significa establecer y son los métodos encargados de asignar un valor a un atributo. Estos métodos nunca devuelven un valor, unicamente lo establecer, por lo que suelen ser en general de tipo **void.**
+
+> *Este es el método utilizado para pasar valores a un constructor por defecto, vacío.*
+
+```java
+//Suelen recibir por parametro que sera el valor a establecer al atributo de la clase.
+public void setNombre(String n){
+	this.nombre = n;
+}
+```
+
+***getter*** significa obtener y son los encargados de acceder, obtener y devolver un valor que ya ha sido asignado a un atributo. Estos métodos devuelven un valor y el método sera del tipo de dato del atributo que tenga el valor.
+
+> *Por ejemplo; si el atributo del cual se quiere devolver su valor es de tipo **int** el valor de retorno del método también sera de tipo **int.***
+
+```java
+String name = "Ezequiel";
+
+public String getName(){
+	return name;
+}
+
+//Ezequiel
+```
+
+### Keyword 'this'
+
+***this.*** es una keyword utilizada para hacer referencia a los miembros/atributos de la clase y no del constructor o los parámetros. Si creamos un método que tiene parámetros con el mismo nombre de los atributos de la clase, necesitaríamos la keyword ***this*** para diferenciarlos uno del otro.
+
+```java
+String nombre;
+String apellido;
+int edad;
+
+public void(String nombre, String apellido, int edad) {
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.edad = edad;
+}
+```
+
+En el ejemplo anterior, la keyword ***this*** es necesaria, pues los parámetros del método tienen el mismo nombre que los atributos de la clase y habrá que diferenciarlos.
+
+```java
+String nombre;
+String apellido;
+int edad;
+
+public void(String n, String a, int e) {
+		nombre = n;
+		apellido = a;
+		edad = e;
+}
+```
+
+En el ejemplo anterior la keyword ***this*** no haría falta, pues los parámetros tienen distinto nombre a los atributos de la clase y no hace falta diferenciación.
+
+### Sobrescribir un método
+
+Este método lo que permite es sobrescribir sobre el método toString() perteneciente de la clase Object (una superclase) de las que derivan todas las clases. Object es una superclase de cualquier clase.
+
+Cada vez que llame al método toString() <'asociado a System.out.println();'> me devolveré un 'template' de como se imprimirá el código. Este método si le pasas por parámetro el objeto lo imprimirá junto a los valores del objeto.
+
+```java
+public String toString() {
+            System.out.println();
+            System.out.println("Cantidad: "+this.cantidad);
+            return "Titular: "+this.titular+" Cantidad: "+this.cantidad;
+        }
+```
+
+### Subclases
+
+Esta nueva clase en realidad es una subclase de la superclase 'Bicicleta'. Se utiliza la keyword 'extends' para heredar
+de una superclase sus atributos y metodos. Estos atributos heredados de la superclase pueden ser modificados
+dentro de la subclase. A la vez puede haber una subclase de otra subclase.
+
+```java
+static class Triciclo extends  Bicicleta {
+        int ruedas = 4;
+        void getInfoRuedas() {
+            System.out.println("Ruedas: "+ruedas);
+        }
+    }
+```
+
+Esta es una subclase de una subclase, que a la vez hereda tanto los atributos como metodos de la superclase.
+
+```java
+static class TricicloDos extends Triciclo {
+    }
+```
