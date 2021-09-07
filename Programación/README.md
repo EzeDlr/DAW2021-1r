@@ -24,7 +24,7 @@
 - [Programación orientada a objetos](#programación-orientada-a-objetos)
   - [Encapsulación modificadores de acceso](#encapsulacion-modificadores-de-acceso)
   - [Clases](#clases)
-  	[Atributos y métodos](#atributos-y-métodos)  
+  	- [Atributos y métodos](#atributos-y-métodos)  
 
 ## ¿Qué es programar?
 
