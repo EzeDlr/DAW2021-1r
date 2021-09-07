@@ -1039,7 +1039,7 @@ static class Triciclo extends  Bicicleta {
     }
 ```
 
-Esta es una subclase de una subclase, que a la vez hereda tanto los atributos como metodos de la superclase.
+Esta es una subclase de una subclase, que a la vez hereda tanto los atributos como métodos de la superclase.
 
 ```java
 static class TricicloDos extends Triciclo {
