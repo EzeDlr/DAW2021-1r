@@ -17,8 +17,9 @@ Método toString para mostrar los datos de los libros. Este método se heredada 
 
 package poo;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.Scanner;
-import java.util.SortedSet;
 
 public class Ejercicio4 {
 
@@ -31,17 +32,12 @@ public class Ejercicio4 {
         private int ejemplares;
         private int prestados;
 
-        public Libro() {
-            prestamo(this.prestados);
-        };
+        public Libro() {};
         public Libro(String titulo, String autor, int ejemplares, int prestados){
             this.titulo = titulo;
             this.autor = autor;
             this.ejemplares = ejemplares;
             this.prestados = prestados;
-
-
-
         }
 
         /*
@@ -88,7 +84,10 @@ public class Ejercicio4 {
             if(prestados > 0) {
                 ejemplares += cantidad;
                 prestados -= cantidad;
-            } else {
+            } else if(prestados == 0) {
+                devolucion = false;
+            }
+            else {
                 devolucion = false;
             }
             return devolucion;
@@ -104,17 +103,18 @@ public class Ejercicio4 {
 
     public static void main(String[] args) {
 
+        //relleno del constructor por defecto, vacío.
         Scanner teclado = new Scanner(System.in);
         String autor, titulo;
         int ejemplares, prestados;
 
-        System.out.println("Titulo: ");
+        System.out.print("Titulo: ");
         titulo = teclado.nextLine();
-        System.out.println("Autor: ");
+        System.out.print("Autor: ");
         autor = teclado.nextLine();
-        System.out.println("Ejemplares: "); //9 ejemplares
+        System.out.print("Ejemplares: "); //9 ejemplares
         ejemplares = teclado.nextInt();
-        System.out.println("Prestados: ");
+        System.out.print("Prestados: ");
         prestados = teclado.nextInt();
 
         Libro objeto1 = new Libro();
@@ -122,6 +122,45 @@ public class Ejercicio4 {
         objeto1.setPrestados(prestados);
         objeto1.setEjemplares(ejemplares);
         objeto1.setTitulo(titulo);
+
+        System.out.println();
+        System.out.println(objeto1);
+
+        //devolucion de 2 libros del objeto 1
+        objeto1.devolucion(2);
+        System.out.println("Se han devuelto 2 libros, los ejemplares deberian de subir de cantidad.");
+        System.out.println();
+        System.out.println(objeto1);
+
+        //prestamo de dos libros del objeto 1
+        objeto1.prestamo(2);
+        System.out.println("se han tomado prestado 2 libros, los ejemplares deberian de bajar de cantidad y los prestados subir");
+        System.out.println();
+        System.out.println(objeto1);
+        System.out.println();
+
+    /*****************************************************************************************************************************************/
+
+        //relleno del constructor formado por parametros
+        Libro objeto2 = new Libro("Un mundo feliz", "Aldous Huxley", 0, 1);
+        System.out.println(objeto2);
+        System.out.println();
+
+        //devolucion de 1 libro del objeto 2
+        objeto2.devolucion(1);
+        System.out.println("Se ha devuelto 1 libro, los ejemplares deberian de subir y los prestados bajar");
+        System.out.println(objeto2);
+
+        //el numero de libros prestados es 0, por lo tanto no puedes devolver libros que no hayan sido prestados, es decir, 0.
+        objeto2.devolucion(2);
+        System.out.println(objeto2);
+
+        //prestamo del unico ejemplar del libro que hay
+        objeto2.prestamo(1);
+        System.out.println(objeto2);
     }
+
+
+
 
 }
