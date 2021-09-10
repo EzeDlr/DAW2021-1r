@@ -1,0 +1,49 @@
+Creacion de LA BASE DE DATOS
+CREATE DATABASE nombreBaseDeDatos;
+
+Creacion de tablas //Las tablas son creadas dentro de las bases de datos
+CREATE TABLE nombreTabla
+(
+        nombreColumna [tipo de dato]INT,
+        nombreColumna2 [tipo de dato] VARCHAR (255)[tipo de dato para strings][tamaño 255maximo] ,
+        nombreColumna3 [tipo de dato] CURRENT_DATE ++[fecha]
+)
+
+
+KEYWORD para modificar, borrar o agregar columnas a una tabla ya creada
+ALTER TABLE nombreTabla << IMPORTANTE: NO USA PARENTESIS >>
+
+    Añadir columna
+    ADD nombreColumna4 [tipo de dato] VARCHAR(255)
+
+    Borrar una columna
+    DROP COLUMN nombreColumna3 [nombre de la columna]
+
+    Cambiar tipo de dato de columna
+    ALTER COLUMN nombreColumna3 INT [nombre de la columna] [nuevo tipo de dato]
+            // MODIFY COLUMN EN MYSQL <<  IMPORTANTE  >>
+
+
+KEYWORD para borrar tablas.
+DROP TABLE objetoAEliminar
+KEYWORD para borrar bases de datos.
+DROP DATABASE nombreBaseDeDatos
+KEYWORD para resetear la tabla borrandola y volviendola a crear,
+TRUNCATE TABLE  nombreTabla
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+CREATE TABLE testeo
+(
+	id INT NOT NULL //NOT NULL significa que ese campo siempre contendra un valor que no es nulo.
+	columna1 VARCHAR(255),
+   	columna2 VARCHAR (255),
+	columna3 INT
+	PRIMARY KEY(id)
+
+//PRIMARY KEY Campo clave: es un campo especial que identifica de forma unica a un registro.
+//Por ejemplo: en una tabla podriamos tener dos personas con el mismo nombre y apellido,
+//pero no con el mismo numero de DNI.
+
+);

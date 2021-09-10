@@ -1,0 +1,53 @@
+Sentencia para la insercion de datos en una tabla
+INSERT INTO [nombre tabla] (nombreColumna1, nombreColumna2, nombreColumna3)
+values ("registro de nombreColumna1", "registro de nombreColumna", registro de nombreColumna3(si fuera un entero));
+
+INSERT INTO [nombre tabla] VALUES ("registro de nombreColumna1", "registro de nombreColumna2") //debe de haber la misma cantidad de registros como de columnas.
+
+Sentencia para eliminar registros de una tabla.
+DELETE FROM [nombre tabla] //borraria todos los registros de una tabla.
+DELETE FROM [nombre tabla] WHERE nombreColumna='nombreRegistro'; //borraria unos registros en especifico
+
+Sentencia para modificar uno o varios registros
+UPDATE [nombre tabla] SET [campo/columna='nuevo valor'] //afectara a todos los registros de la tabla
+UPDATE [nombre tabla] SET [campo/columna='nuevo valor'] WHERE nombreColumna='valor registro'; //afectara al registro que corresponda a la condicion.
+
+INSERT into tabla1 (nombre, apellido, edad) VALUES ();
+
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+Sentencia para seleccionar los campos/columnas que queremos de una tabla
+SELECT [nombreColumna, nombreColumna1, nombreColumna2, nombreColumna3]
+FROM [nombre tabla]
+//Para seleccionar todos los campos/registros de una tabla.
+SELECT * FROM [tabla]
+
+Sentencia para condicionar o filtrar los valores devueltos despues de una consulta.
+SELECT [nombre columna] FROM [nombre tabla]
+WHERE campo='registro' AND/OR/NOT [operador booleano *no obligatorio*] campo='registro'
+
+//Cuando hay dos registros que son iguales los podemos distinguir y solo imprimir uno con la KEYWORD DISTINCT
+SELECT DISTINCT [nombre campo] FROM [nombre tabla]
+
+//Keyword utilizada para buscar un patron especifico
+SELECT [nombre columna] FROM [nombre tabla]
+WHERE [condicion] LIKE / NOT LIKE [% para varios caracteres] [_ para un caracter]
+--https://www.w3schools.com/sql/sql_like.asp
+
+//Keyword utilizada para especificar multiples valores a una condicion
+SELECT [nombre columna] FROM [nombre tabla]
+WHERE [condicion/columna] IN [valor]
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+CONSULTAS ORDENADAS
+
+Keyword utilizada para ordenadar los resueltados devueltos despues de una consulta de forma ascendente o descendente.
+SELECT [nombre capo * ] FROM [nombre tabla]
+ORDER BY [columnas a ordenar] ASC | DESC //Ascendente (de menos a mas) //Descendente  (de mas a menos)
+
+SELECT * FROM tabla1
+GROUP BY edad
+
+////////////////////////////////////////////////////////////////////////////////////////////////
