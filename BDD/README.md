@@ -4,7 +4,7 @@
 - [Bases de datos básicos](#bases-de-datos-básicos)
 - [Conceptos](#conceptos)
 - [Modelo relacional](#modelo-relacional)
-	- [Diseño de una base de datos relacional][#diseno-de-una-base-de-datos-relacional]
+	- [Diseño de una base de datos relacional](#dise-o-de-una-base-de-datos-relacional)
 	- [Tabla intermedia](#tabla-intermedia)
 - [Modelo no relacional](#modelo-no-relacional)
 - [SQL](#sql)
