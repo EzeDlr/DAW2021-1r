@@ -1,6 +1,6 @@
 # Bases de datos
 
-#Tabla de contenidos
+# Tabla de contenidos
 - [Bases de datos básicos](#bases-de-datos-básicos)
 - [Conceptos](#conceptos)
 - [Modelo relacional](#modelo-relacional)
@@ -45,6 +45,22 @@ Las *columnas* corresponden a los *campos* de ***nombre y apellido*** y las *fil
 - ***Informe***
 - ***Guiones***
 - ***Procedimientos***
+
+# Modelo relacional
+
+Es aquella que se basa en las relaciones que los datos tienen entre si y no se tienen en cuenta el orden de almacenamiento.
+
+> *En los modelos relacionales siempre tenemos una llave que identifica, el ID.*
+
+![Untitled](Bases%20de%20datos%204d1cba45acd14dbba80c1887e882c1b9/Untitled.png)
+
+Tienes una *tabla* llamada ***producto*** la cual esta relacionada con otras 4 tablas mas ***proveedor, presentación, marca y zona.*** 
+
+Veamos la tabla ***proveedor y producto*** de forma relacional. Dentro de la tabla *proveedor* existe un campo llamado *id_proveedor* este campo representa un *ID* especifico para cado registro que sera un numero único.
+
+Vamos ahora a la tabla ***producto*** donde aparte de sus campos específicos existe un campo llamado *id_proveedor* y los registros de este campo harán referencia al numero *ID* de la tabla ***proveedor***. 
+
+> No copias los mismos datos que habría en la tabla proveedor hacia la tabla producto, unicamente creas un campo que hara referencia a un registro de la otra tabla y así poder  mediante este ID consultar mas en su respectiva tabla.
 
 # SQL
 
