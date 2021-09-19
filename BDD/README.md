@@ -14,7 +14,7 @@
  	- [DROP](#drop)
  	- [PRIMARY KEY](#primary-key)
  
- - [Manipulación de datos]
+ - [Manipulación de datos](#manipulación-de-datos)
  	- [SELECT FROM](#select-from)
  	- [INSERT INTO](#insert-into)
  	- [DELETE FROM](#delete-from)
