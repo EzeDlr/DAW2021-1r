@@ -52,8 +52,6 @@ Es aquella que se basa en las relaciones que los datos tienen entre si y no se t
 
 > *En los modelos relacionales siempre tenemos una llave que identifica, el ID.*
 
-![Untitled](Bases%20de%20datos%204d1cba45acd14dbba80c1887e882c1b9/Untitled.png)
-
 Tienes una *tabla* llamada ***producto*** la cual esta relacionada con otras 4 tablas mas ***proveedor, presentación, marca y zona.*** 
 
 Veamos la tabla ***proveedor y producto*** de forma relacional. Dentro de la tabla *proveedor* existe un campo llamado *id_proveedor* este campo representa un *ID* especifico para cado registro que sera un numero único.
@@ -61,6 +59,43 @@ Veamos la tabla ***proveedor y producto*** de forma relacional. Dentro de la tab
 Vamos ahora a la tabla ***producto*** donde aparte de sus campos específicos existe un campo llamado *id_proveedor* y los registros de este campo harán referencia al numero *ID* de la tabla ***proveedor***. 
 
 > No copias los mismos datos que habría en la tabla proveedor hacia la tabla producto, unicamente creas un campo que hara referencia a un registro de la otra tabla y así poder  mediante este ID consultar mas en su respectiva tabla.
+
+## Diseño de una base de datos relacional
+
+Este es el diseño relacional de una base de datos perteneciente al sistema de *Academias.*
+
+1. *Definir los elementos de nuestro sistema*
+
+Los elementos del sistema que forman una academia serian la **Academia** en si, los **profesores, alumnos, cursos y notas**. 
+
+1. *Definir los campos de cada tabla*
+
+1. *Pensar en la relación que habría con cada tabla*
+
+Una **Academia** esta formada por varios **Profesores**, pues la tabla de *Profesores tiene una relación con la tabla de Academia,* pues un profesor pertenece a una academia.
+
+Los **Alumnos** pertenecen unicamente a una **Academia,** pues la tabla de *Alumnos* tiene una relación con la tabla de *Academia.*
+
+Los **Cursos** son impartidos por profesores. *Un profesor puede impartir varios cursos pero un curso no puede ser impartido por varios profesore*s. Por lo tanto la tabla de *Cursos* tiene una relación con la tabla de *Profesores.*
+
+Las **Notas** pertenecen a **Alumnos** que realizan **Cursos.** Por lo tanto la tabla Nota*s* tiene relación con la tabla *Alumno y Cursos.*
+
+## Tabla intermedia
+
+Siguiendo el ejemplo anterior; un curso puede ser realizado por varios alumnos, y varios alumnos pueden realizar varios cursos. A eso se le llama una ***relación de a muchos*** y la mejor forma de representarla en el diseño de una base de datos es mediante una ***tabla intermedia.***
+
+La tabla ***Alumno_x_Cursos*** es una tabla intermedia que identificara mediante el *ID* a alumnos específicos que realizarán cursos identificados mediante el *ID.*
+
+# Modelo no relacional
+
+*Estan diseñadas para modelos de datos específicos.* Se caracterizan por no utilizar el lenguaje ***SQL***. La información en estos modelos no relacionales no se estructura en *columnas y filas (campos y registros) sino en **documentos.***
+
+*El modelo no relacional se utiliza cuando no se tiene clara la estructura de un conjunto de datos.*
+
+Tomemos como ejemplo una base de datos en la que se van a almacenar DVDs de películas. Estos podrían almacenarse según el título de la película, fecha de estreno, género, director, etc.
+
+- En una ***base de datos relacional***, cada película sería un registro y ocuparía una de las filas de la tabla. Por su parte, los diferentes datos almacenados sobre cada película (título, fecha de estreno, género o director) se organizarían en campos, que corresponderían a las columnas de la tabla.
+    - Sin embargo, ***en una base de datos NoSQL o no relacional*** cada registro de una película se almacena como un único documento JSON. Todos los atributos o características de cada película (título, fecha de estreno, género y director) se almacenan en un solo documento, Es decir, este almacenamiento de datos está preparado para ofrecer una mayor escalabilidad horizontal y un desarrollo más intuitivo. *Cada documento correspondra a una pelicula en especifico y su escabilidad sera mas facil, pues nuevos datos introducidos corresponderan a una pelicula en especifico.*
 
 # SQL
 
