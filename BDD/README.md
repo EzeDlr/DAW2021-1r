@@ -51,7 +51,7 @@ Las *columnas* corresponden a los *campos* de ***nombre y apellido*** y las *fil
 Es aquella que se basa en las relaciones que los datos tienen entre si y no se tienen en cuenta el orden de almacenamiento.
 
 > *En los modelos relacionales siempre tenemos una llave que identifica, el ID.*
-> ![Modelo relacional](https://github.com/EzeDlr/DAW2021-1r/blob/main/BDD/imagenes/Untitled.png)
+ ![Modelo relacional](https://github.com/EzeDlr/DAW2021-1r/blob/main/BDD/imagenes/Untitled.png)
 
 Tienes una *tabla* llamada ***producto*** la cual esta relacionada con otras 4 tablas mas ***proveedor, presentación, marca y zona.*** 
 
@@ -71,9 +71,9 @@ Este es el diseño relacional de una base de datos perteneciente al sistema de *
 
 Los elementos del sistema que forman una academia serian la **Academia** en si, los **profesores, alumnos, cursos y notas**. 
 
-1. *Definir los campos de cada tabla*
+2. *Definir los campos de cada tabla*
 
-1. *Pensar en la relación que habría con cada tabla*
+3. *Pensar en la relación que habría con cada tabla*
 
 Una **Academia** esta formada por varios **Profesores**, pues la tabla de *Profesores tiene una relación con la tabla de Academia,* pues un profesor pertenece a una academia.
 
@@ -90,6 +90,7 @@ Siguiendo el ejemplo anterior; un curso puede ser realizado por varios alumnos, 
 ![Tabla intermedia](https://github.com/EzeDlr/DAW2021-1r/blob/main/BDD/imagenes/Untitled%202.png)
 
 La tabla ***Alumno_x_Cursos*** es una tabla intermedia que identificara mediante el *ID* a alumnos específicos que realizarán cursos identificados mediante el *ID.*
+
 ![Alumno cursos](https://github.com/EzeDlr/DAW2021-1r/blob/main/BDD/imagenes/Untitled%203.png)
 
 # Modelo no relacional
