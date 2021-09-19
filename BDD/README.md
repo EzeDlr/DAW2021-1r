@@ -9,6 +9,16 @@
 - [Modelo no relacional](#modelo-no-relacional)
 - [SQL](#sql)
  	- [Definición de datos](#definición-de-datos)
+ 	- [CREATE](#create)
+ 	- [ALTER TABLE](#alter-table)
+ 	- [DROP](#drop)
+ 	- [PRIMARY KEY](#primary-key)
+ 
+ - [Manipulación de datos]
+ 	- [SELECT FROM](#select-from)
+ 	- [INSERT INTO](#insert-into)
+ 	- [DELETE FROM](#delete-from)
+ 	- [UPDATE](#update)
 
 # Bases de datos básicos
 
