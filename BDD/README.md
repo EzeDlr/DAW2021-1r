@@ -51,6 +51,7 @@ Las *columnas* corresponden a los *campos* de ***nombre y apellido*** y las *fil
 Es aquella que se basa en las relaciones que los datos tienen entre si y no se tienen en cuenta el orden de almacenamiento.
 
 > *En los modelos relacionales siempre tenemos una llave que identifica, el ID.*
+ ![Modelo relacional](https://github.com/EzeDlr/DAW2021-1r/blob/main/BDD/imagenes/Untitled.png)
 
 Tienes una *tabla* llamada ***producto*** la cual esta relacionada con otras 4 tablas mas ***proveedor, presentación, marca y zona.*** 
 
@@ -62,15 +63,17 @@ Vamos ahora a la tabla ***producto*** donde aparte de sus campos específicos ex
 
 ## Diseño de una base de datos relacional
 
+![Diseño de una base de datos relacional](https://github.com/EzeDlr/DAW2021-1r/blob/main/BDD/imagenes/Untitled%201.png)
+
 Este es el diseño relacional de una base de datos perteneciente al sistema de *Academias.*
 
 1. *Definir los elementos de nuestro sistema*
 
 Los elementos del sistema que forman una academia serian la **Academia** en si, los **profesores, alumnos, cursos y notas**. 
 
-1. *Definir los campos de cada tabla*
+2. *Definir los campos de cada tabla*
 
-1. *Pensar en la relación que habría con cada tabla*
+3. *Pensar en la relación que habría con cada tabla*
 
 Una **Academia** esta formada por varios **Profesores**, pues la tabla de *Profesores tiene una relación con la tabla de Academia,* pues un profesor pertenece a una academia.
 
@@ -84,7 +87,11 @@ Las **Notas** pertenecen a **Alumnos** que realizan **Cursos.** Por lo tanto la 
 
 Siguiendo el ejemplo anterior; un curso puede ser realizado por varios alumnos, y varios alumnos pueden realizar varios cursos. A eso se le llama una ***relación de a muchos*** y la mejor forma de representarla en el diseño de una base de datos es mediante una ***tabla intermedia.***
 
+![Tabla intermedia](https://github.com/EzeDlr/DAW2021-1r/blob/main/BDD/imagenes/Untitled%202.png)
+
 La tabla ***Alumno_x_Cursos*** es una tabla intermedia que identificara mediante el *ID* a alumnos específicos que realizarán cursos identificados mediante el *ID.*
+
+![Alumno cursos](https://github.com/EzeDlr/DAW2021-1r/blob/main/BDD/imagenes/Untitled%203.png)
 
 # Modelo no relacional
 
@@ -96,6 +103,8 @@ Tomemos como ejemplo una base de datos en la que se van a almacenar DVDs de pel
 
 - En una ***base de datos relacional***, cada película sería un registro y ocuparía una de las filas de la tabla. Por su parte, los diferentes datos almacenados sobre cada película (título, fecha de estreno, género o director) se organizarían en campos, que corresponderían a las columnas de la tabla.
     - Sin embargo, ***en una base de datos NoSQL o no relacional*** cada registro de una película se almacena como un único documento JSON. Todos los atributos o características de cada película (título, fecha de estreno, género y director) se almacenan en un solo documento, Es decir, este almacenamiento de datos está preparado para ofrecer una mayor escalabilidad horizontal y un desarrollo más intuitivo. *Cada documento correspondra a una pelicula en especifico y su escabilidad sera mas facil, pues nuevos datos introducidos corresponderan a una pelicula en especifico.*
+
+![Esquemas](https://github.com/EzeDlr/DAW2021-1r/blob/main/BDD/imagenes/Untitled%204.png)
 
 # SQL
 
